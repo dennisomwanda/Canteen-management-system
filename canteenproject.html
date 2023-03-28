@@ -1,0 +1,654 @@
+<DOCKTYPE! html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewpoint" content="width=device-width,initial-scale=1">
+<title>Canteen Management System</title>
+<link rel="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+<script src="https://kit.fontawesome.com/c8bde6940e.js" crossorigin="anonymous"></script>
+<!-- custom css file link -->
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+
+</head>
+<body>
+<!-- header section start -->
+<header>
+<a href="#" class="logo"><img src="https://seeklogo.com/images/C/canteen-vending-logo-C2D5F1951B-seeklogo.com.png?v=637867601690000000"></a>
+<nav class="navbar">
+<a href="#home" class="active">home</a>
+<a href="#about">about</a>
+<a href="#menu">menu</a>
+<a href="#team">team</a>
+<a href="#blog">blog</a>
+
+<!-- Food ordering section start -->
+<button onclick="document.getElementById('index.js').style.display='block'" style="width:auto;">Order Now</button>
+<div id="index.js" class="modal">
+<form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('index.js').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+   </div>
+ 
+<section class="main">
+	<h1>Place Your Order Here!</h1>
+	<form action="javascript:void(0);">
+		<fieldset>
+		<legend>Your Info:</legend>
+		<label for="name">Name:</label>
+	<input type="text" id="name" name="user_name"><br>
+		<label for="mail">Email:</label><br>
+	<input type="email" id="mail" name="user_email"><br>
+		<label for="phone">Phone:</label><br>
+	<input type="tel" id="phone" name="user_tel"><br>
+		<label for="address">Address:</label><br>
+		<textarea></textarea>
+	</fieldset>
+	<fieldset>
+		<legend>Pasta Choice:</legend>
+		<input type="radio" id="spaghetti" name="pasta"><label>Spaghetti</label>
+		<input type="radio" id="penne" name="pasta"><label>Penne</label><br>
+		<input type="checkbox" id="glutenfree" name="glutenfree"><label>Gluten Free?</label>
+	</fieldset>
+	<fieldset>
+		<legend>Filling Choice:</legend>
+		<input type="radio" id="mince" name="filling"><label>Meatless Mince</label>
+		<input type="radio" id="lentils" name="filling"><label>Lentils</label>
+	</fieldset>
+		<fieldset>
+			<legend>Your Sides:</legend>
+		<input type="radio" id="bread" name="side"><label>Garlic Bread</label>
+		<input type="radio" id="nobread" name="side"><label>No Garlic Bread</label><br>
+			<input type="checkbox" id="glutenfree" name="glutenfree"><label>Gluten Free?</label>
+	</fieldset>
+	<fieldset>
+		<legend>Extra Fillings:</legend>
+		<input type="checkbox" id="mushrooms" name="mushrooms"><label>Mushrooms</label><br>
+		<input type="checkbox" id="onions" name="onions"><label>Onions</label></br>
+	<input type="checkbox" id="carrots" name="carrots"><label>Carrots</label></br>
+<input type="checkbox" id="celery" name="celery"><label>Celery</label></br>
+<input type="checkbox" id="peas" name="peas"><label>Peas</label></br>
+	</fieldset>
+<fieldset>
+	<legend>Any Allergies/Special Requests:</legend>
+<textarea></textarea>
+</fieldset>
+<input class="button" type="submit" value="Order Now" onclick="submitForm()">
+</form>
+</div>
+<div class="order">
+	<h1>Thanks for your order!</h1>
+	<img src="https://thumbs.dreamstime.com/b/done-validate-icon-green-round-button-done-validate-icon-isolated-green-round-button-abstract-illustration-105984862.jpg">
+</div>
+</div>
+
+</section>
+
+<!-- Food ordering section ends -->
+	</div>
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+    </div>
+
+    <div class="container">
+	<br>
+	<h1>Welcome back</h1>
+	</br>
+	 </br>
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+		<span class="psw">Dont have account? <a href="#">Register</a>
+		</span>
+	  </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+	  
+    </div>
+  </form>
+  </div>
+  
+  
+  <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Register</button>
+<div id="id02" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+    </div>
+
+    <div class="container">
+	<br><h1>Create an Account</h1>
+	 </br>
+	 </br>
+    <br><p>Please fill in this form to create an account.</p>
+	</br>
+	 </br>
+      <label for="Email"><b>Enter Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+       
+	   <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="repeat Password" name="psw-repeat" required>
+      <hr>
+	  <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+      <button type="submit" class="registerbtn">Register</button>
+	 
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+   </div>
+   
+   
+   </div>
+
+</nav>
+
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+<div class="icons">
+<i class="fas fa-bars" id="menu"></i>
+</div>
+
+  <input type="texts" name="fas fa-search" placeholder="Enter keywords...">
+   
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id02');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+
+<script>
+// Get the modal
+var modal = document.getElementById('index.js');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+
+</header>
+
+<!-- header section end -->
+
+<!-- slider section start -->
+<div class="home" id="home">
+<div class="swiper home-slider">
+<div class="swiper-wrapper wrapper">
+<div class="swiper-slide slide slide1">
+<div class="content">
+
+<h3>Delicious Bajia</h3>
+<h1>gift voucher</h1>
+<p>
+give away your beloved customers
+</p>
+</div>
+</div>
+
+<div class="swiper-slide slide slide2">
+<div class="content">
+
+<h3>sale of 10% this dish</h3>
+<h1>fresh carrot chapati</h1>
+<p>
+food canteen
+</p>
+</div>
+</div>
+
+<div class="swiper-slide slide slide3">
+<div class="content">
+
+<h3>we are open</h3>
+<h1>fresh juicy fruits</h1>
+<p>
+you will love it
+</p>
+</div>
+</div>
+</div>
+
+<div class="swiper-pagination"></div>
+
+</div>
+</div>
+</div>
+<!-- slider section end -->
+
+<section class="welcome" id="about">
+<h1 class="heading">WELCOME TO CANNTEEN</h1>
+<center><h3 class="sub-heading"> ~ Luxury & Quality ~ </h3></center>
+
+<div class="box-container">
+<div class="box">
+<div class="image">
+<img src="https://i.ytimg.com/vi/J40mYbjHdG4/maxresdefault.jpg">
+</div>
+
+
+<div class="content">
+<h3>PROFESSIONAL LEVEL</h3>
+<p>Not again is there anyone who loves or pursues or desire to obtain pain of itself, because it is pain, but because occasionally circumstances occur.</p>
+
+<a href="#" class="btn">Read amaore</a>
+</div>
+</div>
+
+<div class="box">
+<div class="image">
+<img src="https://weeatatlast.com/wp-content/uploads/2022/02/mandazi-recipe.jpg">
+</div>
+
+<div class="content">
+<h3>FRESH FOOD GUARANTEED</h3>
+<p>Not again is there anyone who loves or pursues or desire to obtain pain of itself, because it is pain, but because occasionally circumstances occur.</p>
+
+<a href="#" class="btn">Read amaore</a>
+</div>
+</div>
+<div class="box">
+<div class="image">
+<img src="https://img-global.cpcdn.com/recipes/8a27d99bead0aafa/1200x630cq70/photo.jpg">
+</div>
+
+<div class="content">
+<h3>THE MENU IS PLENTIFUL</h3>
+<p>Not again is there anyone who loves or pursues or desire to obtain pain of itself, because it is pain, but because occasionally circumstances occur.</p>
+
+<a href="#" class="btn">Read amaore</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- welcome section start -->
+
+<!-- our menu section start -->
+<section class="our-menu" id="menu">
+<h1 class="heading">our food menu</h1>
+<center><h3 class="sub-heading"> ~ see what we offer ~ </h3></center>
+
+<div class="menu-container">
+
+<div class="item">
+<div class="item-name">
+<h2>Main course</h2>
+</div>
+
+<div class="item-body">
+<div class="item-menu">
+<h3>Super-Delicious Zuppa Toscana</h3>
+<span class="dots"</span>
+<h3>Ksh 40</h3>
+</div>
+
+<ul>
+<li><a href="#">Chiken</a></li>
+<li><a href="#">Italian</a></li>
+<li><a href="#">Sausage</a></li>
+<li><a href="#">Spinach</a></li>
+</ul>
+</div>
+
+
+
+
+<div class="item-menu">
+<h3>Super-Delicious Zuppa Toscana</h3>
+<span class="dots"</span>
+<h3>Ksh 60</h3>
+</div>
+<ul>
+<li><a href="#">Mushroom</a></li>
+<li><a href="#">Italian</a></li>
+<li><a href="#">Sausage</a></li>
+<li><a href="#">Spinach</a></li>
+</ul>
+</div>
+
+<div class="item">
+<div class="item-name">
+<h2>Soups & salads</h2>
+</div>
+
+<div class="item-body">
+<div class="item-menu">
+<h3>Super-Delicious Zuppa Toscana</h3>
+<span class="dots"</span>
+<h3>Ksh 40</h3>
+</div>
+<ul>
+<li><a href="#">Chiken</a></li>
+<li><a href="#">Italian</a></li>
+<li><a href="#">Sausage</a></li>
+<li><a href="#">Spinach</a></li>
+</ul>
+</div>
+
+
+<div class="item-menu">
+<h3>Super-Delicious Zuppa Toscana</h3>
+<span class="dots"</span>
+<h3>Ksh 60</h3>
+</div>
+<ul>
+<li><a href="#">Mushroom</a></li>
+<li><a href="#">Italian</a></li>
+<li><a href="#">Sausage</a></li>
+<li><a href="#">Spinach</a></li>
+</ul>
+</div>
+
+
+<div class="item">
+<div class="item-name">
+<h2>Drinks</h2>
+</div>
+
+<div class="item-body">
+<div class="item-menu">
+<h3>Super-Delicious Zuppa Toscana</h3>
+<span class="dots"</span>
+<h3>Ksh 40</h3>
+</div>
+
+<ul>
+<li><a href="#">Chiken</a></li>
+<li><a href="#">Italian</a></li>
+<li><a href="#">Sausage</a></li>
+<li><a href="#">Spinach</a></li>
+</ul>
+</div>
+
+
+<div class="item-menu">
+<h3>Super-Delicious Zuppa Toscana</h3>
+<span class="dots"</span>
+<h3>Ksh 60</h3>
+</div>
+<ul>
+<li><a href="#">Mushroom</a></li>
+<li><a href="#">Italian</a></li>
+<li><a href="#">Sausage</a></li>
+<li><a href="#">Spinach</a></li>
+</ul>
+</div>
+
+
+<div class="item">
+<div class="item-name">
+<h2>Desserts</h2>
+</div>
+
+<div class="item-body">
+<div class="item-menu">
+<h3>Super-Delicious Zuppa Toscana</h3>
+<span class="dots"</span>
+<h3>Ksh 40</h3>
+</div>
+
+<ul>
+<li><a href="#">Chiken</a></li>
+<li><a href="#">Italian</a></li>
+<li><a href="#">Sausage</a></li>
+<li><a href="#">Spinach</a></li>
+</ul>
+</div>
+
+<div class="item-menu">
+<h3>Super-Delicious Zuppa Toscana</h3>
+<span class="dots"</span>
+<h3>Ksh 60</h3>
+</div>
+<ul>
+<li><a href="#">Mushroom</a></li>
+<li><a href="#">Italian</a></li>
+<li><a href="#">Sausage</a></li>
+<li><a href="#">Spinach</a></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- our menu section ends -->
+
+<!-- our team section start --->
+<section class="our-team" id="team">
+<h1 class="heading">our talented chef</h1>
+<center>
+<h3 class="sub-heading"> ~ Experience & Enthusiasm ~ </h3>
+</center>
+<div class="our-chef">
+<div class="item">
+<div class="image">
+<img src="https://thechefguys.com/wp-content/uploads/2021/03/Personal-Chef-Whitefish-MT-300x300.jpg">
+</div>
+<div class="chef-info">
+<h3>Jerry robinson</h3>
+<span>master chef</span>
+<ul>
+<li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+<li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+<li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+<li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+</ul>
+</div>
+</div>
+
+
+<div class="item">
+<div class="image">
+<img src="https://media.licdn.com/dms/image/C5603AQGgtrA81uYGXA/profile-displayphoto-shrink_800_800/0/1516641835510?e=2147483647&v=beta&t=ffTYJXf9KZ5UNbV5C3ONEww3Z8o_QMw8cy8vzdAOUlI">
+</div>
+
+<div class="chef-info">
+<h3>Mercy Mwangangi</h3>
+<span>master chef</span>
+
+<ul>
+<li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+<li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+<li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+<li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+</ul>
+</div>
+</div>
+
+<div class="item">
+<div class="image">
+<img src="https://www.foodformzansi.co.za/wp-content/uploads/2019/11/edc477ad9f955628bc325c926334d6d9-300x300.jpg">
+</div>
+
+<div class="chef-info">
+
+<h3>Jackson Obure</h3>
+
+<span>master chef</span>
+
+<ul>
+<li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+<li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+<li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+<li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+</section>
+<!-- our team section ends --->
+
+<!-- news section start -->
+<section class="blog" id="blog">
+<h1 class="heading">latest news</h1>
+<center><h3 class="sub-heading"> ~ Greate articles ~ </h3></center>
+<div class="box-container">
+<div class="box">
+<div class="image">
+<img src="https://www.bakingbusiness.com/ext/resources/2021/1/PostCerealSnacks_Lead.jpg?height=635&t=1610467482&width=1200">
+</div>
+<div class="content">
+<h3>PROFFESIONAL LEVEL</h3>
+<p>Not Again Is There Anyone Who Loves Or Pursues Or Desire To Obtain Pain Of Itself, Because It Is Pain, But Because Occasionally Circumstances Occur.</p>
+<a href="#">READ MORE</a>
+<img src="">
+</div>
+</div>
+
+<div class="box">
+<div class="image">
+<img src="https://i.ytimg.com/vi/5-VKVaiZq0Y/maxresdefault.jpg">
+</div>
+<div class="content">
+<h3>FRESH SNACKS</h3>
+<p>Not Again Is There Anyone Who Loves Or Pursues Or Desire To Obtain Pain Of Itself, Because It Is Pain, But Because Occasionally Circumstances Occur.</p>
+<a href="#">READ MORE</a>
+<img src="">
+</div>
+</div>
+
+<div class="box">
+<div class="image">
+<img src="http://secret-ingredient.com/wp-content/uploads/2017/09/AvoToast_CW.jpg">
+</div>
+<div class="content">
+<h3>THE MENU IS PLENTIFUL</h3>
+<p>Not Again Is There Anyone Who Loves Or Pursues Or Desire To Obtain Pain Of Itself, Because It Is Pain, But Because Occasionally Circumstances Occur.</p>
+<a href="#">READ MORE</a>
+<img src="">
+</div>
+</div>
+
+</div>
+</section>
+<!-- news section end -->
+<!-- footer section start -->
+<section class="footer">
+
+
+<div class="container">
+<div>
+<h3>ABOUT US</h3>
+<p>Lorem ipsum dolor sit amet. Hic consequatur eaque ab libero nisi et neque internos? </p>
+</div>
+
+<div>
+<h3>GET NEWS & OFFERS</H3>
+<input type="email" name="" placeholder="enter your email">
+<ul>
+<li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+<li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+<li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+<li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+</ul>
+</div>
+
+<div>
+<h3>CONTACT US</h3>
+<span>Creative Networks Dennis</span>
+<span>+254702022317</span>
+<span>dennisoowiti@gmail.com</span>
+<span>www.canteenmanagement.com</span>
+
+<button>
+<a href="#home" class="active">Log out</a>
+</button>
+
+</div>
+</div>
+<p>&copy;2023 Reserved by Dennis Omwanda</p>
+</section>
+<!-- footer section end -->
+
+<!-- jump to top -->
+<a href="#"><button class="topbtn"><i class="fa-solid fa-angle-up"></i></button></a>
+
+
+<!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    const progressCircle = document.querySelector(".autoplay-progress svg");
+    const progressContent = document.querySelector(".autoplay-progress span");
+    var swiper = new Swiper(".home-slider", {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 7500,
+        disableOnInteraction: false
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+      },
+     loop:true,
+    });	
+  </script>
+<script type="text/javascript">
+let menu = document.querySelector('#menu');
+let navbar = document.querySelector('.navbar');
+
+menu.onclick = () =>{
+menu.classList.toggle('fa-times');
+navbar.classList.toggle('active');
+}
+</script>
+
+<script src="index.js"></script>
+
+</body>
+</html>
